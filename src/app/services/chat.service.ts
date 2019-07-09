@@ -94,6 +94,63 @@ export class ChatService {
     return observableReq;
   }
 
+  getAllUserList(): any {
+    let url = this.usersUrl + '/all';
+
+    let authToken = this.authService.getUserData().token;
+
+    // prepare the request
+    let headers = new Headers({
+      "Content-Type": "application/json",
+      "Authorization": authToken
+    });
+    let options = new RequestOptions({ headers: headers });
+
+    // POST
+    let observableReq = this.http.get(url, options)
+                                 .map(this.extractData);
+
+    return observableReq;
+  }
+
+  sendRequest(id, username){
+    let url = this.usersUrl + '/request/' + id +'/' + username;
+
+    let authToken = this.authService.getUserData().token;
+
+    // prepare the request
+    let headers = new Headers({
+      "Content-Type": "application/json",
+      "Authorization": authToken
+    });
+    let options = new RequestOptions({ headers: headers });
+
+    // POST
+    let observableReq = this.http.get(url, options)
+                                 .map(this.extractData);
+
+    return observableReq;
+  }
+
+  acceptRequest(id, username){
+    let url = this.usersUrl + '/accept/' + id +'/' + username;
+
+    let authToken = this.authService.getUserData().token;
+
+    // prepare the request
+    let headers = new Headers({
+      "Content-Type": "application/json",
+      "Authorization": authToken
+    });
+    let options = new RequestOptions({ headers: headers });
+
+    // POST
+    let observableReq = this.http.get(url, options)
+                                 .map(this.extractData);
+
+    return observableReq;
+  }
+
   receiveMessage(): any {
     let observable = new Observable(observer => {
       this.socket.on("message", (data: Message) => {

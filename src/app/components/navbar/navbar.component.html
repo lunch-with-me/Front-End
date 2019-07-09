@@ -21,6 +21,7 @@
         <li *ngIf="authService.loggedIn()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="onNavigate()"><a routerLink="/home">Home</a></li>
         <li *ngIf="!authService.loggedIn()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="onNavigate()"><a routerLink="/">Home</a></li>
         <li *ngIf="authService.loggedIn()" routerLinkActive="active" (click)="onNavigate()"><a routerLink="/map">Map</a></li>
+        <li *ngIf="authService.loggedIn()" routerLinkActive="active" (click)="onNavigate()"><a routerLink="/users">Users</a></li>
         <li *ngIf="authService.loggedIn()" routerLinkActive="active" (click)="onNavigate()"><a routerLink="/chat">Chat</a></li>
       </ul>
 

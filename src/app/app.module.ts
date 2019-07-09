@@ -22,12 +22,16 @@ import { ActiveListComponent } from './components/active-list/active-list.compon
 import { MapComponent } from './components/map/map.component';
 import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './components/users/users.component';
+import { Register2Component } from './components/register2/register2.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'users', component: UsersComponent },
   { path: 'map', component: MapComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'register2', component: Register2Component },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'chat', canActivate: [AuthGuard], children: [
@@ -48,7 +52,9 @@ const appRoutes: Routes = [
     ChatRoomComponent,
     MessageComponent,
     ActiveListComponent,
-    MapComponent
+    MapComponent,
+    UsersComponent,
+    Register2Component
   ],
   imports: [
     BrowserModule,
