@@ -89,8 +89,26 @@ export class MapComponent implements OnInit {
         console.log(this.location.lat);
   }
 
-  submit(){
-    this.api.map(this.location.lat, this.location.lng).subscribe(
+ submit(){
+//     if (!this.locationForm.valid) {
+//  this.successMessage = 'Please pick a time and location';
+//         console.log('Invalid form'); return;
+          
+//       } 
+        
+// var obj = this.locationForm.value;
+// obj.email = localStorage.getItem("email");
+// console.log("send data - "+JSON.stringify(obj))
+// this.api.updatetime(JSON.stringify(obj))
+
+// .subscribe(
+//   data=>{console.log(data);
+
+//     error=>console.error(error)
+//   }
+// )  
+
+    this.api.map(this.location.lat, this.location.lng,).subscribe(
       data => {
         console.log(data);
         alert('success');
@@ -99,5 +117,6 @@ export class MapComponent implements OnInit {
       error => console.log(error)
     );
   }
+
 
 }

@@ -17,4 +17,26 @@ export class ApiService {
     });
   }
 
+
+  active()
+  {
+    return this._http.put(this.host + 'users/active',{});
+  }
+
+  
+
+  resetpassword(body:any){
+  
+    return this._http.post(this.host+ 'users/resetpassword', body,{});
+  
+}
+ 
+submitRegi(body:any){
+  return this._http.post(this.host + 'users/registerdetails', body,{
+    observe:'body',
+    headers:new HttpHeaders().append('Content-Type','application/json')
+  });
+}
+
+
 }

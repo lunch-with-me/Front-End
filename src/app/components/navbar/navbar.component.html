@@ -11,7 +11,7 @@
 
       <a routerLink="/" class="navbar-brand" (click)="onNavigate()">
         <span><img alt="Brand" src="assets/img/brand.ico" width="34px" height="34px"></span>
-        ChatApp
+        Lunch With Me
       </a>
     </div>
 
@@ -20,9 +20,13 @@
       <ul class="nav navbar-nav navbar-left">
         <li *ngIf="authService.loggedIn()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="onNavigate()"><a routerLink="/home">Home</a></li>
         <li *ngIf="!authService.loggedIn()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="onNavigate()"><a routerLink="/">Home</a></li>
-        <li *ngIf="authService.loggedIn()" routerLinkActive="active" (click)="onNavigate()"><a routerLink="/map">Map</a></li>
+        <!-- <li *ngIf="authService.loggedIn()" routerLinkActive="active" (click)="onNavigate()"><a routerLink="/map">Map</a></li> -->
         <li *ngIf="authService.loggedIn()" routerLinkActive="active" (click)="onNavigate()"><a routerLink="/users">Users</a></li>
         <li *ngIf="authService.loggedIn()" routerLinkActive="active" (click)="onNavigate()"><a routerLink="/chat">Chat</a></li>
+        <li *ngIf="authService.loggedIn()" routerLinkActive="active" (click)="onNavigate()"><a routerLink="/chat">notificaton</a></li>
+        <li *ngIf="authService.loggedIn()" routerLinkActive="active" (click)="onNavigate()"><a routerLink="/chat">Super Like</a></li>
+        <li *ngIf="authService.loggedIn()" routerLinkActive="active" (click)="onNavigate()"><a routerLink="/chat">Offers</a></li>
+        
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

@@ -5,71 +5,73 @@
   
   
   <div class="row">
+   
+    <div class="col-sm-3" style="background-color:lavenderblush;margin-left: -170px;margin-right: 20px;height: 750px;">
   
-    <div class="col-sm-2" style="background-color:lavenderblush; ">
-    
-        <div class="btn-group-vertical">
-              
-  <div class="header_buttons">
-  
-      <button  (click)="movetoprofile()" matTooltip="My profile" aria-label="Button that displays a tooltip when focused or hovered over">
-          
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" alt="Avatar" class="md-avatar-rounded-circle ">
-  
-        </button>
-        <br><br>
-  
-    
-    <button  matTooltip="Messages" aria-label="Button that displays a tooltip when focused or hovered over">
-      <span aria-label="Example icon-button with a heart icon">message</span>
-    </button>
-    <br><br>
-  
-    <button  matTooltip="Notifications" aria-label="Button that displays a tooltip when focused or hovered over">
-      <span aria-label="Example icon-button with a heart icon">notification_important</span>
-    </button> <br><br>
-  
-  
-    <button  matTooltip="Super Likes" aria-label="Button that displays a tooltip when focused or hovered over">
-      <span aria-label="Example icon-button with a heart icon" (click)="movetoprofile()">favorite</span>
-    </button> <br><br>
-  
-    <button  (click)="movetosettings()" matTooltip="settings" aria-label="Button that displays a tooltip when focused or hovered over">
-        <span aria-label="Example icon-button with a heart icon">settings</span>
-      </button> <br><br>
-    
+ 
+  <div class="top">
+    <h2 style="color: black">Friend's List</h2>
   </div>
+    <div class="shadow">
+      <div *ngFor="let u of user.friends">
+      <div class="col-sm-12" >
+        <div class="col-sm-2">
+          <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px">
+        </div>
+        <div class="col-sm-8">
+          <h4><a href="javascript:void(0)" style="color: black;">{{u.username}}</a></h4>
+        </div>
+        <div class="col-sm-2">  
+          <a ref="javascript:void(0)" style="color: black;" routerLink="/chat/{{u.username}}">Chat</a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <hr />
+    </div>
+    </div>
+ 
+  </div>
+   
+    
   
-          </div><!-- button group vertical-->
-    </div><!--left bar-->
-  
-    <div class="col-sm-10" style="background-color:lavender;">
+    <div class="col-sm-10" style="background-color:lavender;height: 750px;">
       
       <div class="boom">
       <div class="example-card">
-          <div>
-            <div div-avatar class="example-header-image"></div>
-            <div>Shiba Inu</div>
-            <div>Dog Breed</div>
+        <div class="top">
+          <h2 style="color: black">Find Friends</h2>
+        </div>
+        <div class="row">
+      
+          <div class="shadow">
+            <div *ngFor="let u of userList">
+            <div class="col-sm-12" >
+              <div class="col-sm-2">
+                <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px">
+              </div>
+              <div class="col-sm-8">
+                <h4><a href="javascript:void(0)" style="color: black;">{{u.username}}</a></h4>
+              </div>
+              <div class="col-sm-2">          
+                <a ref="javascript:void(0)" (click)="sendRequest(u._id, u.username)" *ngIf="!u.request" style="color: black;">Send Request</a>
+                <a ref="javascript:void(0)" style="color: black;" *ngIf="u.request">Request Sent</a>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <hr />
           </div>
-          <img div-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-          <div>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
           </div>
-          <div>
-            <button>LIKE</button>
-            <button>SUPER LIKE</button>
+        </div>
           </div>
         </div>
   
   
-  </div>
+  
   </div> <!-- right bar-->
   
+
+ 
+     
   </div> <!--row-->
   
     

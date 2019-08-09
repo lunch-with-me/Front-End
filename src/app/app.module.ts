@@ -24,6 +24,13 @@ import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './components/users/users.component';
 import { Register2Component } from './components/register2/register2.component';
+import { ActiveComponent } from './components/active/active.component';
+import { RegisterDetailsComponent } from './components/register-details/register-details.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+
+// import { NgbDate, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -33,6 +40,9 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'register2', component: Register2Component },
   { path: 'login', component: LoginComponent },
+  { path: 'active', component: ActiveComponent },
+  { path: 'registerdetails', component: RegisterDetailsComponent },
+  { path: 'forgotpassword', component: ForgotPasswordComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'chat', canActivate: [AuthGuard], children: [
     { path: ':chatWith', component: ChatRoomComponent },
@@ -54,14 +64,21 @@ const appRoutes: Routes = [
     ActiveListComponent,
     MapComponent,
     UsersComponent,
-    Register2Component
+    Register2Component,
+    ActiveComponent,
+    RegisterDetailsComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    
     ReactiveFormsModule,
+  // NgbModule,
+    //NgbDate,
     HttpModule,
     FlashMessagesModule,
+  
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDIMpYY2k6FMyXAK9T-t1677iXCUHan2h8'

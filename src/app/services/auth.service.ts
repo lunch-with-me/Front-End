@@ -29,6 +29,7 @@ export class AuthService {
 
     return observableReq;
   }
+  
 
   authenticateUser(user): any {
     let url: string = this.apiUrl + "/authenticate";
@@ -62,6 +63,8 @@ export class AuthService {
 
     return observableReq;
   }
+
+
 
   storeUserData(token, user): void {
     localStorage.setItem("token", token);
